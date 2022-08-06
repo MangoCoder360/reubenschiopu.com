@@ -94,8 +94,19 @@
   }
 </style>
 <script>
+  window.binaryTick = 0;
   function nextAnimation(){
     var waiting = document.getElementsByClassName('waiting');
+    if (window.binaryTick == 0){
+      waiting[0].classList.add("even");
+      waiting[0].classList.remove("waiting");
+      window.binaryTick = 1;
+    }
+    else if (window.binaryTick == 1){
+      waiting[0].classList.add("odd");
+      waiting[0].classList.remove("waiting");
+      window.binaryTick = 0;
+    }
   }
   setInterval(nextAnimation, 1000);
 </script>
