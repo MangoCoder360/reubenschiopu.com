@@ -73,6 +73,9 @@
       if(circle.radius > 1){
         circle.radius -= 0.8;
       }
+      else{
+        circles.splice(i, 1);
+      }
 
       ctx.beginPath();
       ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2, false);
