@@ -13,7 +13,7 @@
 
   <div id="portfolio">
     <canvas width="512px" height="512px" id="canvas"></canvas>
-    <h1>coming soon...</h1>
+    <h1 id="coming-soon">coming soon...</h1>
   </div>
 </body>
 </html>
@@ -91,10 +91,16 @@
     user-select: none;
   }
 
+  #coming-soon{
+    z-index: 100;
+  }
+
   #canvas{
     width: 100%;
     height: 100%;
-    filter: blur(150px);
+    filter: blur(80px);
+    clip-path: inset(0 -200px 0 0);
+    transform: scaleX(1.5);
   }
 
   :root{
@@ -120,7 +126,7 @@
     background: black;
     color:white;
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 10vw;
+    font-size: 9vw;
     display:flex;
     align-items: center;
     user-select: none;
@@ -129,6 +135,7 @@
   #name-text{
     animation: fadeIn 4s ease 0.5s;
     animation-fill-mode: both;
+    transform: translateY(-15%);
   }
 
   @keyframes fadeIn {
@@ -146,7 +153,7 @@
       opacity: 0;
     }
     100% {
-      transform: translateY(0);
+      transform: translateY(-20%);
       opacity: 1;
     }
   }
@@ -167,7 +174,7 @@
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 15px;
 }
 
 /* Track */
